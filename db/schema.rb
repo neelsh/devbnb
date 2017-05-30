@@ -57,4 +57,5 @@ ActiveRecord::Schema.define(version: 20170530094628) do
   add_foreign_key "contracts", "services"
   add_foreign_key "contracts", "users"
   add_foreign_key "services", "users"
+
 end
