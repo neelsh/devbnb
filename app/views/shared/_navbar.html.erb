@@ -62,8 +62,30 @@
 
     <% end %>
 
+    <!-- Create user icon - Facebook one if user logged in with Facebook
+    THIS CODE ONLY PUTS A USER AVATAR IF THERE IS ONE -->
+    <% if current_user %>
+      <% avatar_url = current_user.facebook_picture_url %>
+      <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+    <% end %>
+
+
+    <!-- Create user icon - Facebook one if user logged in with Facebook
+    THIS CODE ONLY PUTS A SPACE HOLDER IN IF A USER AVATAR IS NOT THERE -->
+    <%# if current_user %>
+      <%# avatar_url = current_user.facebook_picture_url %>
+    <%# else %>
+      <%# avatar_url = "http://placehold.it/30x30/" %>
+    <%# end %>
+    <%#<%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+
+
+
     <!-- Button (call-to-action) -->
     <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
