@@ -26,9 +26,9 @@ class User < ApplicationRecord
     return user
   end
 
- validates :name, presence: :true
+ # validates :name, presence: :true
  validates :email, presence: :true, uniqueness: :true
- validates :skills, presence: :true
+ # validates :skills, presence: :true
 
  has_many :contracts
  has_many :services
