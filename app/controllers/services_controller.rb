@@ -11,6 +11,7 @@ end
 
 def show
   @service = Service.find(params[:id])
+  @contract = Contract.new
 end
 
 def edit
