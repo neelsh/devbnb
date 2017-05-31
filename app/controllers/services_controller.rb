@@ -18,7 +18,7 @@ end
 
 def create
   @service = Service.new(service_params)
-  if @user.save
+  if @service.save
     redirect_to service_path(@service)
   else
     render :new
@@ -38,7 +38,7 @@ end
 private
 
 def service_params
-  params.require(:service).permit(:name)
+  params.require(:service).permit(:title, :rate, :photo_url, :city, :experience, :education)
 end
 
 def set_service
