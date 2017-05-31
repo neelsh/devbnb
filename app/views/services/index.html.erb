@@ -2,6 +2,33 @@
   <br>
   <h1>All Developers</h1>
   <hr>
+  <div class="row">
+    <% @services.each do |service| %>
+      <div class="col-xs-12 col-sm-6 col-lg-4">
+        <%= render "card", service: service %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <br>
+  <h1>All Developers</h1>
+  <hr>
 
   <div class="wrapper-grey ">
     <div class="container text-center  features">
@@ -73,7 +100,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
