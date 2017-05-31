@@ -27,10 +27,11 @@ class User < ApplicationRecord
   end
 
  # validates :name, presence: :true
- validates :email, presence: :true, uniqueness: :true
+ # validates :email, presence: :true, uniqueness: :true
+
  # validates :skills, presence: :true
 
- has_many :contracts
- has_many :services
+ has_many :contracts, dependent: :destroy
+ has_many :services, dependent: :destroy
 
 end
