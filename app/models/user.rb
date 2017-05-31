@@ -28,6 +28,7 @@ class User < ApplicationRecord
 
  # validates :name, presence: :true
  # validates :email, presence: :true, uniqueness: :true
+
  # validates :skills, presence: :true
 
  has_many :contracts, dependent: :destroy
