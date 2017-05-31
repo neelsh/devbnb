@@ -6,14 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-#delete users.all
 User.destroy_all
 
 
 names = ["Jimmy Page", "Johann Sebastian Bach", "Lady Gaga", "Elton John", "Elvis Presley",
         "Ella Fiztgerald", "Jimi Hendrix", "Eva Cassidy", "Joe Walsh", "Neel Shah",
-        "Noel Gallagher", "c"]
+        "Noel Gallagher", "Christina Aguilera"]
 
 picture_urls = [
                 "http://1krecordings.com/wp-content/uploads/2014/12/JP.jpg",
@@ -30,9 +28,16 @@ picture_urls = [
                 "http://mostfamousperson.net/ChristinaAguilera.png"
                ]
 
+rates = ["345", "320", "400", "370", "800", "1000",
+         "200", "250", "450", "120", "450", "400"]
+
+degrees = ["Masters Computing", "Degree Electronics", "Self Taught",
+           "no formal training", "Degree Comp Sci", "BTEC Electronics", "PHD in A.I.", "Phd Cloud Comp", "Degree Functional Prog", "Degree Computer Science", "Degree Computer Science", "Degree Computer Science", "Degree Computer Science"]
 
 cities = ["London", "Paris", "Amsterdam", "Cologne", "Berlin", "Pyong Yang", "Bejing", "Nanjing",
           "New York", "Denver", "Boulder", "Rome"]
+
+experiences = ["3", "5", "3", "14", "3", "8", "23", "4", "7", "9", "1", "10"]
 
 12.times do |i|
   u = User.create!(
@@ -45,16 +50,14 @@ cities = ["London", "Paris", "Amsterdam", "Cologne", "Berlin", "Pyong Yang", "Be
 
   Service.create!(
     user_id: u.id,
-    title: "Front End",
-    rate: "350"
+    title: u.name,
+    rate: "#{rates[i]}",
+    photo_url: "#{picture_urls[i]}",
+    education: "#{degrees[i]}",
+    experience: "#{experiences[i]} years experience",
+    city: "#{cities[i]}",
+    skills: "Coding"
   )
-
-  Service.create!(
-    user_id: u.id,
-    title: "Back End",
-    rate: "400"
-  )
-
 end
 
 
