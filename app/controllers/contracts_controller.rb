@@ -1,13 +1,10 @@
 class ContractsController < ApplicationController
-  before_action :set_contract, only: [:show, :destroy]
-
-  def new
-    @contract = Contract.new
-  end
+  before_action :set_contract, only: [:show]
 
   def create
-    @contract = Contract.new
-    raise
+    @contract = Contract.new(contract_params)
+    @contract.service = Service.find(params[:service_id])
+    @contract.user = current_user
     if @contract.save
       redirect_to contract_path(@contract)
     else
@@ -15,20 +12,15 @@ class ContractsController < ApplicationController
     end
   end
 
-  def index
-    @contracts = Contract.all
-  end
-
   def show
-
   end
 
-  def destroy
-    @contract.destroy
-    redirect_to contracts_path
-  end
 
   private
+
+  def contract_params
+    params.require(:contract).permit(:accepted)
+  end
 
   def set_contract
     @contract = Contract.find(params[:id])
