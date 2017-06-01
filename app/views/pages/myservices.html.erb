@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <br>
+    <h1 class="text-center">My services</h1>
+    <hr>
+    <% if @services.any? %>
+      <div class="row">
+        <% @services.each do |service| %>
+          <div class="col-xs-12 col-sm-4 col-lg-4">
+            <%= render "services/card", service: service %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <h1 class="text-center"><%= "You have no services for hire" %></h1>
+    <% end %>
+  </div>
+</div>

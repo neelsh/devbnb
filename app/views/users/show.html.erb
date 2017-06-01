@@ -5,19 +5,28 @@
       </div>
       <div class="info text-center">
         <%= image_tag 'erlich.jpg', class: "avatar-square" %>
-        <h3>Name: <%= @user.name %></h3>
+        <h3>Name: <%= @user.first_name %> <%= @user.last_name %></h3>
         <h3>Location: <%= @user.city %></h3>
       </div>
       <div class="service text-center">
-        <h2>Skills:</h2>
-        <p><%= @user.title %></p>
+        <h2>Services:</h2>
+        <ul>
+        <% @user.services.each do |service| %>
+        <li><%= service.title %></li>
+        <% end %>
+        </ul>
       </div>
       <div class="experience text-center">
-        <h2>Rate></h2>
-        <p><%= @user.rate %></p>
+        <h2>Education></h2>
+        <p><%= @user.education %></p>
+        <h2>Experience></h2>
+        <p><%= @user.experience %></p>
       </div>
     </div>
   </div>
+  <% if current_user.id == @user.id %>
+    <%= link_to "Edit my profile", edit_user_path(current_user), class: "btn btn-primary" %>
+  <% end %>
 </div>
 
 

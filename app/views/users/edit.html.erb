@@ -1,0 +1,16 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= simple_form_for(current_user) do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :education %>
+      <%= f.input :experience, collection: (1..20).to_a %>
+      <%= f.input :city %>
+      <%= f.submit :create %>
+    <% end %>
+    </div>
+  </div>
+</div>
