@@ -4,7 +4,7 @@
       <div class="banner-show" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'background.jpg' %>'); height: 100px; background-size: cover; background-position: center center; margin-top: 7px; ">
       </div>
       <div class="info text-center" style="background: #f2f2f2";>
-        <%= image_tag 'erlich.jpg', class: "avatar-square" %>
+        <%= cl_image_tag @user.photo.path, class: "avatar-square" %>
         <h3><strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %></h3>
         <h3><strong>Location:</strong> <%= @user.city %></h3>
       </div>
@@ -25,13 +25,13 @@
         <p><%= @user.experience %></p>
       </div>
     </div>
+    <%= link_to "edit", edit_user_path(@user), class: "btn btn-warning"  %>
   </div>
   <div class="button-center">
     <% if current_user.id == @user.id %>
       <%= link_to "Edit my profile", edit_user_path(current_user), class: "btn btn-primary" %>
     <% end %>
   </div>
-
 </div>
 
 

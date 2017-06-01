@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 
   resources :contracts, only: [:show]
 
+  mount Attachinary::Engine => "/attachinary"
+
   get 'contracts/:id/accepted' => 'contracts#mark_as_accepted', as: :accept_contract
   get 'contracts/:id/declined' => 'contracts#mark_as_declined', as: :decline_contract
-
 end
