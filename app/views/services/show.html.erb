@@ -4,15 +4,15 @@
       <div class="banner-show" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'background.jpg' %>'); height: 100px; background-size: cover; background-position: center center; margin-top: 7px; ">
       </div>
       <div class="info text-center">
-        <%= image_tag @service.photo_url, class: "avatar-square" %>
+        <%= image_tag 'background.jpg', class: "avatar-square" %>
         <h3>Name: <%= @service.title %></h3>
-        <h3>Location: <%= @service.city %></h3>
+        <h3>Location: </h3>
       </div>
       <div class="service text-center">
         <h2>Education:</h2>
-        <p><%= @service.education %></p>
+        <p></p>
         <h2>Experience:</h2>
-        <p><%= @service.experience %> years</p>
+        <p>years</p>
       </div>
       <div class="experience text-center">
         <h2>Rate></h2>
@@ -37,7 +37,7 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for [@service, @contract] do |f| %>
-          <%= f.input :accepted, label: "Message" %>
+          <%= f.input :message, label: "Message" %>
           <%= f.submit :go, class: "btn btn-primary" %>
         <% end %>
       </div>
