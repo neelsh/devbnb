@@ -3,7 +3,7 @@
 <div class="banner-big" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'background.jpg' %>')">
   <div class="banner-big-content">
     <h1>Connect</h1>
-    <p>Connecting with potential development help for your project has never been easier!  Devbnb provides project managers with extensive options to find the perfect fit for development roles in their companies and for their projects</p>
+    <p>Connect with potential development partners!</p>
     <%= link_to "All Postings", services_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
@@ -13,12 +13,12 @@
   <h1 class="text-center">Featured</h1>
   <hr>
   <div class="row">
-    <% @services.each do |service| %>
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <%= render "services/card", service: service %>
-      </div>
-    <% end %>
+      <% @services.each do |service| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+            <%= render "services/card", service: service %>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>
-
-

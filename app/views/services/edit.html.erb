@@ -5,17 +5,12 @@
         <%= simple_form_for(@service) do |f| %>
           <%= f.input :title %>
           <%= f.input :rate, collection: (10..200).to_a %>
-          <%= f.submit :create %>
+        <div class="button-flex">
+          <%= f.submit "Update", class: "btn btn-primary" %>
         <% end %>
+        <%= button_to "Delete", service_path(@service), method: :delete, class: "btn btn-warning" %>
+        </div>
      </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-

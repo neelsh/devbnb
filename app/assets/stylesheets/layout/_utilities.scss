@@ -47,3 +47,20 @@
   border: 1px solid black;
   margin-bottom: 15px;
 }
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 178px);
+}
+
+
+.badge{
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+.status{
+  color: black !important;
+  text-decoration: underline;
+}
