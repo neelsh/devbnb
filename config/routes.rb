@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   get 'pages/home'
+  get 'pages/contracts'
+  get 'pages/myservices'
+
 
   root to: 'pages#home'
   resources :users, only: [:new, :edit, :update, :create, :show, :destroy] do

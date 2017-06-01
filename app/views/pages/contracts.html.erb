@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <br>
+    <h1 class="text-center">My contracts</h1>
+    <hr>
+    <% if @contracts.any? %>
+    <div class="row">
+        <% @contracts.each do |contract| %>
+          <div class="col-xs-12 col-sm-4 col-lg-4">
+            <%= render "contracts/card", contract: contract %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <h1 class="text-center"><%= "There are no contracts" %></h1>
+    <% end %>
+  </div>
+</div>
