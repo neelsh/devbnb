@@ -5,22 +5,24 @@
       </div>
       <div class="info text-center">
         <%= image_tag 'background.jpg', class: "avatar-square" %>
-        <h3>Name: <%= @service.title %></h3>
-        <h3>Location: </h3>
+        <h3>Title: <%= @service.title %></h3>
+        <!-- <h3>Location: </h3> -->
       </div>
       <div class="service text-center">
-        <h2>Education:</h2>
-        <p></p>
-        <h2>Experience:</h2>
-        <p>years</p>
+
+        <!-- <h2>Experience:</h2> -->
+        <!-- <p>years</p> -->
       </div>
       <div class="experience text-center">
-        <h2>Rate></h2>
+        <h2>Rate</h2>
         <p><%= @service.rate %></p>
+
+        <%= @service.user.email %>
       </div>
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         Hire me
       </button>
+      <%= link_to "Edit Service", edit_service_path(@service), class: "btn btn-warning"  %>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  before_action :set_service, only: [ :update ]
 
 def index
   @services = Service.all
@@ -15,6 +16,7 @@ def show
 end
 
 def edit
+  @service = Service.find(params[:id])
 end
 
 def create
