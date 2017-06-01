@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   end
 
   resources :contracts, only: [:show]
+
+  get 'contracts/:id/accepted' => 'contracts#mark_as_accepted', as: :accept_contract
+  get 'contracts/:id/declined' => 'contracts#mark_as_declined', as: :decline_contract
+
 end

@@ -1,16 +1,19 @@
 <div class="container">
   <div class="row">
     <br>
-    <h1 class="text-center">My services</h1>
-    <hr>
+    <h1 class="text-center">My Services</h1>
+    <hr></div>
+</div>
+<div class="container">
+  <div class="row">
     <% if @services.any? %>
-      <div class="row">
-        <% @services.each do |service| %>
-          <div class="col-xs-12 col-sm-4 col-lg-4">
+      <% @services.each do |service| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
             <%= render "services/card", service: service %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     <% else %>
       <h1 class="text-center"><%= "You have no services for hire" %></h1>
     <% end %>
