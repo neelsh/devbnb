@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+   skip_before_action :authenticate_user!, only: :home
+
   def home
     # @featured_users = User.where(featured: true)
     @services = Service.last(4)
@@ -15,3 +17,4 @@ class PagesController < ApplicationController
     @services = Service.where(user_id: current_user.id)
   end
 end
+

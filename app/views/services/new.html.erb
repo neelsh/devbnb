@@ -1,17 +1,16 @@
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= simple_form_for(@service) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :rate, collection: (10..200).to_a %>
-        <%= f.submit :create %>
-      <% end %>
-   </div>
+<div class="content-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <%= simple_form_for(@service) do |f| %>
+          <%= f.input :title %>
+          <%= f.input :rate, collection: (10..200).to_a %>
+          <%= f.submit :create %>
+        <% end %>
+     </div>
+    </div>
   </div>
 </div>
-
 
 
 
