@@ -6,7 +6,7 @@
       <%= simple_form_for(@service) do |f| %>
         <%= f.input :title %>
         <%= f.input :rate, collection: (10..200).to_a %>
-        <%= f.submit :create %>
+        <%= f.submit "Update", class: "btn btn-warning" %>
       <% end %>
    </div>
   </div>
