@@ -1,8 +1,10 @@
-<div class="card">
-  <div class="card-description">
-    <h2><%= service.title %></h2>
-    <h2><%= service.rate %></h2>
-    <h2></h2>
-  </div>
-  <%= link_to "", service_path(service), class: "card-link"  %>
+
+<div class="card-description">
+      <h2><%= service.title %></h2>
+      <h2>£<%= service.rate %>/pd</h2>
+      <h2></h2>
+    <div class="form in-line">
+      <button class="btn btn-success">Edit</button>
+    </div>
+
 </div>
