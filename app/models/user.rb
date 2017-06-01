@@ -5,6 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
+  has_many :contracts, dependent: :destroy
+  has_many :services, dependent: :destroy
+
+  has_attachment :photo
+
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
@@ -25,13 +30,4 @@ class User < ApplicationRecord
 
     return user
   end
-
- # validates :name, presence: :true
- # validates :email, presence: :true, uniqueness: :true
-
- # validates :skills, presence: :true
-
- has_many :contracts, dependent: :destroy
- has_many :services, dependent: :destroy
-
 end

@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   end
 
   resources :contracts, only: [:show]
+
+  mount Attachinary::Engine => "/attachinary"
 end
