@@ -6,10 +6,6 @@
     <%= simple_form_for(@service) do |f| %>
       <%= f.input :title %>
       <%= f.input :rate, collection: (10..200).to_a %>
-      <%= f.input :photo_url %>
-      <%= f.input :education %>
-      <%= f.input :experience, collection: (1..20).to_a %>
-      <%= f.input :city %>
       <%= f.submit :create %>
     <% end %>
     </div>

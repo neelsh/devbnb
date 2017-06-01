@@ -5,16 +5,13 @@
   </div>
     <div class="contract-section">
       <h2><%= @contract.service.title %></h2>
-      <%= image_tag @contract.service.photo_url, class: "contract-img" %>
+      <%= image_tag "background.jpg", class: "contract-img" %>
     </div>
     <div class="contract-section">
       <h2>Description</h2>
       <p>Eduction</p>
-      <p><%= @contract.service.education %></p>
       <p>Exprerience</p>
-      <p><%= @contract.service.experience %> years</p>
       <p>City</p>
-      <p><%= @contract.service.city %></p>
       <p>Rate</p>
       <p><%= @contract.service.rate %>/hour</p>
     </div>
