@@ -10,7 +10,6 @@
             <p>£<%= @service.rate %></p>
           </div>
         </div>
-
         <div class="show-container">
           <div class="show-container-left">
           <% if @service.user.photo %>
@@ -21,5 +20,82 @@
             <div class="show-user-info">
               <div class="avatar-large" style="background-image: url('<%= photo %>')"></div>
               <h3><%= @service.user.first_name %> <%= @service.user.last_name %></h3>
+              <div>
+              <div class="row">
+                <div class="col-xs-4">
+                  <h4>Education</h4>
+                <p><%= @service.user.education %></p>
+                </div>
+                <div class="col-xs-4">
+                  <h4>Experience</h4>
+                <p><%= @service.user.experience %></p>
+                </div>
+                <div class="col-xs-4">
+                   <h4>Location</h4>
+                <p><%= @service.user.city %></p>
+                </div>
+              </div>
+
+
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39728.85776031626!2d-0.1459333231527138!3d51.51223245034059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1496414512053" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
             </div>
+          </div>
+           <div class="show-container-right">
+             <div class="show-cta">
+             <% unless @service.user == current_user %>
+             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="left: 20px">
+             Hire me
+             </button>
+             <% end %>
+            <% if @service.user == current_user %>
+              <%= link_to "Edit Service", edit_service_path(@service), class: "btn btn-success btn-lg"%>
+            <% end %>
+             </div>
+              <div class="other-service-container text-center">
+               <h4><strong>Other Services</strong></h4>
+                <% @other_services.each do |service| %>
+                 <div class="product">
+                  <%= link_to service_path(service) do %>
+                    <div class='product-body'>
+                       <h3><%= service.title %></h3>
+                       <p>Daily rate: £ <%= service.rate %></p>
+                     </div>
+                    <% end %>
+                   </div>
+                <% end %>
+              </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <% unless @service.user == current_user %>
+       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+         Hire me
+       </button>
+     <% end %>
+</div>
+ </div>
+
+
+
+ <!-- Modal -->
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <h4 class="modal-title" id="myModalLabel">Let's start!</h4>
+       </div>
+       <div class="modal-body">
+         <%= simple_form_for [@service, @contract] do |f| %>
+           <%= f.input :message, label: "Send a message" %>
+           <%= f.submit :go, class: "btn btn-primary" %>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
 

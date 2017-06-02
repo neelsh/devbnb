@@ -40,12 +40,12 @@
             </li>
             <li>
               <%= link_to pages_home_path do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                <i class="fa fa-home"></i>  Home
               <% end %>
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fa fa-sign-out"></i>  Sign out
               <% end %>
             </li>
           </ul>
@@ -55,7 +55,7 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% end %>
 
@@ -72,7 +72,7 @@
     <%#<%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post services"), new_service_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to "Post services", new_service_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
 
   </div>
 
