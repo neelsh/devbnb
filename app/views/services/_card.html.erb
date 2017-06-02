@@ -1,9 +1,14 @@
-<div class="service-card">
+<% if service.photo %>
+  <% photo = cl_image_path service.photo.path %>
+<% else %>
+  <% photo = image_path "background.jpg" %>
+<% end %>
+<div class="service-card" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= photo %>')">
   <div class="service-card-title">
     <h2><%= service.title %></h2>
   </div>
   <div class="service-card-content">
-    <div class="service-card-user">
+    <div class="service-card-user text-center">
       <% if service.user.photo %>
         <%= cl_image_tag service.user.photo.path, class: "avatar" %>
       <% end %>

@@ -5,6 +5,7 @@
         <%= simple_form_for(@service) do |f| %>
           <%= f.input :title %>
           <%= f.input :rate, collection: (10..200).to_a %>
+          <%= f.input :photo, as: :attachinary %>
         <div class="button-flex">
           <%= f.submit "Update", class: "btn btn-primary" %>
         <% end %>
