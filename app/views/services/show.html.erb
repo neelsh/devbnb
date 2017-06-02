@@ -24,8 +24,9 @@
           Hire me
         </button>
       <% end %>
-
+      <% if @service.user == current_user %>
       <%= link_to "Edit Service", edit_service_path(@service), class: "btn btn-success btn-lg"  %>
+      <% end %>
     </div>
   </div>
 </div>
