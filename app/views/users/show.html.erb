@@ -31,7 +31,6 @@
         <p><%= @user.experience %></p>
       </div>
     </div>
-    <%= link_to "edit", edit_user_path(@user), class: "btn btn-warning"  %>
   </div>
   <div class="button-center">
     <% if current_user.id == @user.id %>
