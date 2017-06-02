@@ -6,11 +6,11 @@
 </div>
 <div class="container">
   <div class="row">
-    <% if @contracts.any? %>
-      <% @contracts.each do |contract| %>
+    <% if @my_contracts.any? %>
+      <% @my_contracts.each do |contract| %>
         <div class="col-xs-12 col-sm-4">
           <div class="card">
-            <%= render "contracts/card", contract: contract %>
+            <%= render "contracts/card-employee", contract: contract %>
           </div>
         </div>
       <% end %>
@@ -23,17 +23,15 @@
 <div class="container">
   <div class="row">
     <br>
-    <h1 class="text-center">Devs I have hired</h1>
+    <h1 class="text-center">Freelancers I have hired</h1>
   </div>
 </div>
 <div class="container">
   <div class="row">
-    <% if @users != nil %>
-      <% @users.each do |user| %>
+    <% if @booked_contracts != nil %>
+      <% @booked_contracts.each do |contract| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card">
-            <%= render "contracts/devs", user: user %>
-          </div>
+          <%= render "contracts/card-employer", contract: contract %>
         </div>
       <% end %>
     <% else %>

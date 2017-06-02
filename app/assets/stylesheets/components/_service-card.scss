@@ -1,0 +1,44 @@
+.service-card {
+  position: relative;
+  height: 250px;
+  background-color: gray;
+  border-radius: 4px;
+  .service-card-title {
+    position: absolute;
+    top: 10px;
+    padding: 0 10px;
+    h2 {
+      font-weight: 300;
+      font-size: 25px;
+    }
+  }
+  .service-card-content {
+    position: absolute;
+    bottom: 10px;
+    padding: 0 10px;
+    .service-card-user {
+      h3 {
+        font-weight: 300;
+        font-size: 18px;
+      }
+    }
+  }
+  .service-card-rate {
+    position: absolute;
+    right: 20px;
+    bottom: 45px;
+    }
+ }
+
+ .service-card-link {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+ }
+ .service-card-link:hover {
+  opacity: 0.3;
+ }
