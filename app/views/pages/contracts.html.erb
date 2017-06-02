@@ -8,11 +8,7 @@
   <div class="row">
     <% if @my_contracts.any? %>
       <% @my_contracts.each do |contract| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card">
             <%= render "contracts/card-employee", contract: contract %>
-          </div>
-        </div>
       <% end %>
     <% else %>
       <h1 class="text-center"><%= "There are no contracts" %></h1>
@@ -30,9 +26,7 @@
   <div class="row">
     <% if @booked_contracts != nil %>
       <% @booked_contracts.each do |contract| %>
-        <div class="col-xs-12 col-sm-4">
           <%= render "contracts/card-employer", contract: contract %>
-        </div>
       <% end %>
     <% else %>
       <h1 class="text-center"><%= "You have not hired anyone" %></h1>
