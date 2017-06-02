@@ -12,7 +12,7 @@
         </div>
         <div class="show-container">
           <div class="show-container-left">
-          <% if @service.user.photo %>
+          <% if @service.photo %>
             <% photo = cl_image_path @service.photo.path %>
           <% else %>
             <% photo = image_path "dinesh.jpg" %>
