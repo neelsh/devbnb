@@ -1,8 +1,21 @@
-<div class="card">
-  <div class="card-description">
-        <h2><%= service.title %></h2>
-        <h2>£<%= service.rate %>/pd</h2>
-        <h2></h2>
+<div class="service-card">
+  <div class="service-card-title">
+    <h2><%= service.title %></h2>
   </div>
-  <%= link_to "", service_path(service), class: "card-link" %>
+  <div class="service-card-content">
+    <div class="service-card-user">
+      <% if service.user.photo %>
+        <%= cl_image_tag service.user.photo.path, class: "avatar" %>
+      <% end %>
+      <% if service.user.first_name %>
+        <h3><%= service.user.first_name %> <%= service.user.last_name %></h3>
+      <% else %>
+        <h3><%= service.user.email %></h3>
+      <% end %>
+    </div>
+  </div>
+  <div class="service-card-rate">
+        <div class="badge badge-green"><i class="fa fa-gbp" aria-hidden="true"></i><%= service.rate %></div>
+    </div>
+  <%= link_to "", service_path(service), class: "service-card-link" %>
 </div>

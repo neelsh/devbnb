@@ -6,7 +6,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
 
   has_many :contracts, dependent: :destroy
-  has_many :services, dependent: :destroy
+  has_many :services, dependent: :destroy #create
+  has_many :booked_contracts, through: :services, source: :contracts
 
   has_attachment :photo
 

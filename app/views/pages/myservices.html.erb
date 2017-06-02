@@ -9,9 +9,7 @@
     <% if @services.any? %>
       <% @services.each do |service| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card">
-            <%= render "services/card", service: service %>
-          </div>
+          <%= render "services/card", service: service %>
         </div>
       <% end %>
     <% else %>

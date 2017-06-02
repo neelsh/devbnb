@@ -1,12 +1,14 @@
 <div class="card-description">
   <h2 class="status"><%= contract.status %></h2>
   <h2><%= contract.service.title %></h2>
-  <h2><%= contract.message %></h2>
   <h2>Daily rate: £ <%= contract.service.rate %></h2>
-  <h2>To be hired by: <%= contract.service.user.first_name %></h2>
+  <% if contract.service.user.first_name %>
+    <h2>Freelancer: <%= contract.service.user.first_name %></h2>
+  <% else %>
+    <h2>Freelancer: <%= contract.service.user.email %></h2>
+  <% end %>
   <% if contract.status == "pending" %>
-    <%= link_to "Accept", accept_contract_path(contract), class: "btn btn-primary"  %>
-    <%= link_to "Decline", decline_contract_path(contract), class: "btn btn-danger"  %>
+    <p>Contract pending</p>
   </div>
 <% elsif contract.status == "accepted" %>
   </div>
