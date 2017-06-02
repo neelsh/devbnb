@@ -8,3 +8,43 @@
   justify-content: center;
   margin-top: 7px;
 }
+
+.show-container {
+  display: flex;
+}
+
+.show-container-left {
+  flex: 1 0 60%;
+}
+.show-container-right {
+  flex: 1 0 40%;
+  text-align: right;
+}
+
+.show-user-info {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  .avatar-large {
+    margin-right: 20px;
+  }
+}
+
+.other-service-container {
+  padding: 20px;
+  background-color: #F7F7F7;
+  .product-body {
+  }
+
+}
+
+.show-cta {
+  padding: 20px 0;
+  width: 100%;
+  a, button {
+    width: 100%;
+    margin: 10px auto;
+  }
+}
+
+

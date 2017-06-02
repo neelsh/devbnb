@@ -1,18 +1,19 @@
-<div class="container">
-  <br>
-  <h1 class="text-center">All services</h1>
-  <hr>
-  <div class="row">
-      <% @services.each do |service| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card">
-            <%= render "services/card", service: service %>
+<div class="content-wrapper">
+  <div class="container">
+    <br>
+    <h1 class="text-center">All services</h1>
+    <hr>
+    <div class="row">
+        <% @services.each do |service| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card">
+              <%= render "services/card", service: service %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+    </div>
   </div>
 </div>
-
 
 
 
