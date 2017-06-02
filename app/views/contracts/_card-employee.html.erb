@@ -1,0 +1,36 @@
+
+<div class="product">
+  <% if contract.service.photo %>
+    <%= cl_image_tag contract.service.photo.path, class: "product-image hidden-xs" %>
+  <% else %>
+    <%= image_tag "background.jpg", class: "product-image hidden-xs" %>
+  <% end %>
+  <div class='product-body'>
+    <h3><%= contract.service.title %></h3>
+    <p>Status: <%= contract.status %></p>
+    <p>Daily rate: £ <%= contract.service.rate %></p>
+    <% if contract.service.user.first_name %>
+      <p>Freelancer: <%= contract.service.user.first_name %></p>
+    <% else %>
+      <p>Freelancer: <%= contract.service.user.email %></p>
+    <% end %>
+    </div>
+  <ul class="list-inline product-controls hidden-sm hidden-xs">
+    <% if contract.status == "pending" %>
+        <li><%= link_to "Accept", accept_contract_path(contract), class: "btn btn-primary"  %></li>
+        <li><%= link_to "Decline", decline_contract_path(contract), class: "btn btn-danger"  %></li>
+    <% elsif contract.status == "accepted" %>
+  <div class="badge-container">
+      <div class="badge">
+        <i class="fa fa-check"></i>
+      </div>
+      </div>
+    <% else %>
+    <div class="badge-container">
+      <div class="badge">
+        <i class="fa fa-times"></i>
+      </div>
+      </div>
+    <% end %>
+  </ul>
+</div>

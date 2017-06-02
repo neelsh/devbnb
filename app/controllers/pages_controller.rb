@@ -8,9 +8,10 @@ class PagesController < ApplicationController
 
   def contracts
     # The ones where current user has been hired
-    @contracts = Contract.where(user_id: current_user.id)
-
+    @my_contracts = current_user.booked_contracts
+    @booked_contracts = current_user.contracts
     # TODO the contracts where current user has hired other users
+
   end
 
   def myservices
