@@ -14,15 +14,16 @@
 }
 
 .show-container-left {
-  flex: 1 0 60%;
+  flex: 1 0 70%;
 }
 .show-container-right {
-  flex: 1 0 40%;
+  flex: 1 0 30%;
   text-align: right;
 }
 
 .show-user-info {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   padding: 10px;
   .avatar-large {
@@ -31,9 +32,30 @@
 }
 
 .other-service-container {
+  h4 {
+    margin-top: 0;
+  }
   padding: 20px;
   background-color: #F7F7F7;
-  .product-body {
+  .product {
+    background: white;
+      margin-bottom: 10px;
+    a {
+      color: black;
+      text-decoration: none;
+      &:hover {
+        color: black;
+        text-decoration: none;
+      }
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 300;
+
+    }
+    p {
+      font-size: 14px;
+    }
   }
 
 }
