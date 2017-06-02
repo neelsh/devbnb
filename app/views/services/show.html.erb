@@ -13,39 +13,43 @@
 
         <div class="show-container">
           <div class="show-container-left">
-            <h3><%= image_tag 'background.jpg', class: "avatar-large" %> <%= @service.user.first_name %> <%= @service.user.last_name %></h3>
+          <% if @service.user.photo %>
+            <% photo = cl_image_path @service.photo.path %>
+          <% else %>
+            <% photo = image_path "dinesh.jpg" %>
+          <% end %>
+            <div class="show-user-info">
+              <div class="avatar-large" style="background-image: url('<%= photo %>')"></div>
+              <h3><%= @service.user.first_name %> <%= @service.user.last_name %></h3>
+            </div>
+
+
+
+
+
+
+
           </div>
           <div class="show-container-right">
+            <div class="show-cta">
             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="left: 20px">
             Hire me
             </button>
-             <%= link_to "Edit Service", edit_service_path(@service), class: "btn btn-success btn-lg"  %>
+            </div>
+             <div class="other-service-container text-center">
+              <h2><strong>Other Services</strong></h2>
+               <% @other_services.each do |service| %>
+                <div class="product">
+                  <div class='product-body'>
+                    <h3><%= service.title %></h3>
+                    <p>Daily rate: £ <%= service.rate %></p>
+                    </div>
+                  </div>
+               <% end %>
+             </div>
           </div>
         </div>
       </div>
-      <div class="info text-center">
-        <%= image_tag 'background.jpg', class: "avatar-square" %>
-        <h3>Title: <%= @service.title %></h3>
-        <!-- <h3>Location: </h3> -->
-      </div>
-      <div class="service text-center">
-
-        <!-- <h2>Experience:</h2> -->
-        <!-- <p>years</p> -->
-      </div>
-      <div class="experience text-center">
-        <h2>Rate</h2>
-        <p>£ <%= @service.rate %> p/d</p>
-
-        <%= @service.user.email %>
-      </div>
-      <% unless @service.user == current_user %>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-          Hire me
-        </button>
-      <% end %>
-
-      <%= link_to "Edit Service", edit_service_path(@service), class: "btn btn-success btn-lg"  %>
     </div>
   </div>
 

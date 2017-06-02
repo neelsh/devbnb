@@ -7,6 +7,7 @@ class ServicesController < ApplicationController
 
   def show
     @contract = Contract.new
+    @other_services = Service.first(5)
   end
 
   def new
